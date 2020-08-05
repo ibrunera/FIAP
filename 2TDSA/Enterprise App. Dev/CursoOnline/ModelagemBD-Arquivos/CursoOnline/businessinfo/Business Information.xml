@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="4A583794-3291-606C-3BB0-99871CF76C3E">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:02:21 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

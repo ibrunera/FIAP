@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="CursoOnline" id="3BD51AEA-8C5E-E7D1-1424-83073AF3A206" version="3.5">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:02:21 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>3BD51AEA-8C5E-E7D1-1424-83073AF3A206</designId>
+</OSDM_Design>

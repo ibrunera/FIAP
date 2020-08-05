@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BEDD8487-4E75-5B3D-8DC7-721EBD4955D2" name="T_PA_FORMA_PGTO">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>AF29B4C0-FF46-68B6-363E-81BCB4AB26BC</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_forma_pgto" id="B74B57B0-66C3-45E3-039A-0FE1606C6AB4">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código da Forma de Pagamento  com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>469E5720-79C2-594D-23CF-A3F2C6DCDF94</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_forma_pgto" id="8002403A-D792-B713-CA66-5DAF462E7579">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Descrição da Forma de Pagamento (Exemplos: Boleto, Depósito, À vista)&lt;br/&gt;</commentInRDBMS>
+<generatorID>ACAC00FF-911D-CEAA-D3B2-732B2C44CD5F</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74A8F162-101C-61C6-6693-020217F50FE8" name="T_PA_FORMA_PGTO_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>334A574F-58A9-6EDE-B85B-703D233436C5</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B74B57B0-66C3-45E3-039A-0FE1606C6AB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

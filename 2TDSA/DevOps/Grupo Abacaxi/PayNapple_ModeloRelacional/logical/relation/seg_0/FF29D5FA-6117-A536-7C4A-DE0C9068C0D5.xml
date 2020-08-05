@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_4" directorySegmentName="seg_0" id="FF29D5FA-6117-A536-7C4A-DE0C9068C0D5">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:21:46 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<sourcePk>BD644AD4-ED17-474F-1EC7-F8F8AC843C34</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2DED953E-2680-21BA-2B0D-D2C774622DCC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>AD2984DB-DD1B-7F3C-3D22-A8F6E91FC260</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

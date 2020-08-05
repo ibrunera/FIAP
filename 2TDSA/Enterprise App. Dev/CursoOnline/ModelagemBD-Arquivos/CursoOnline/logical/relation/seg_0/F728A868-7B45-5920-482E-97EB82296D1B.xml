@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_4" directorySegmentName="seg_0" id="F728A868-7B45-5920-482E-97EB82296D1B">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:29:40 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<sourcePk>982753E9-C60D-0C58-CFAB-CC8CFED465B9</sourcePk>
+<targetPk>DF49C2CE-F43D-4C25-B28E-7ADB3AB42A1D</targetPk>
+<dominantRole>83A279F0-9FB3-98F1-DF77-E751AC73B24E</dominantRole>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>83A279F0-9FB3-98F1-DF77-E751AC73B24E</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>5ECFB1ED-AE81-0ED7-C7D9-E3A3028F7376</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

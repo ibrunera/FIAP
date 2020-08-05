@@ -1,0 +1,176 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7857AAA6-C622-7773-BEF4-7798E67BF14B" name="T_PA_PAGAMENTO">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>AD2984DB-DD1B-7F3C-3D22-A8F6E91FC260</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_conta" id="AE8B1074-8949-E337-1BA4-7D18B140A836">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código da Conta com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>CBED566C-3529-90F1-44F6-8DBE17C0506D</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_fornecedor" id="F6DB408C-D0BB-2481-A5E5-E012926FEA7D">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código do Fornecedor  com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>F8CE1B26-40AD-F87C-E57D-B1A951E362C2</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C3C3BFB-E2B9-BBB9-7D17-59D95DC02EAC" referredColumn="93E48374-310C-5A20-3DF4-231C80BE8CD1"/>
+</associations>
+</Column>
+<Column name="cd_forma_pgto" id="AC58B63F-E6B9-C37D-3EF6-9615F06266E4">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código da Forma de Pagamento  com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>8CCE0B6A-D470-A6C9-E987-616D6EFC77F2</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0AD8C55E-98EE-5D2D-EF6C-8818183A6B87" referredColumn="B74B57B0-66C3-45E3-039A-0FE1606C6AB4"/>
+</associations>
+</Column>
+<Column name="cd_finalidade" id="B406A039-8F96-1D8B-1EFF-21776B009B7A">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código da Finalidade  com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>5F00B039-0331-9544-609B-BF5094D511DC</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF543369-61D8-FC32-1C0A-06F99A1AB0CD" referredColumn="D7FA6FFC-F09A-C8A1-2B6A-DA0B645A3655"/>
+</associations>
+</Column>
+<Column name="ds_status" id="849D80EB-C378-326C-A530-677ABC97AB50">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Status do Pagamento será um ENUM no Java que poderá ser PAGOS, À VENCER, VENCIDOS E TODOS.</commentInRDBMS>
+<generatorID>5F51C161-2439-C27B-FF9B-08CB5462C88C</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_vencimento" id="57BA1F64-3263-D869-E7F2-89E00FFCB183">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Data de vencimento será  DD/MM/YYYY</commentInRDBMS>
+<generatorID>F4B967BA-30E2-7CFC-7BB9-9C5D8D4EAC8D</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_emissao" id="0E826EBE-BC91-DC1A-EB20-17371C62AD57">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Data de emissao será  DD/MM/YYYY e não é obrigatória.</commentInRDBMS>
+<generatorID>D3A7428B-0FCE-E12D-BB72-E080D0F84FA9</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_valor" id="C0F1DD9C-09FA-0408-5073-477E9E030797">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>valor será em R$ com duas casa decimais.</commentInRDBMS>
+<generatorID>E5B4241C-7621-5D3B-60EF-F0CE111045EC</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C0876FBB-7ED5-8FA0-CE44-B8160806733D" name="T_PA_PAGAMENTO_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>4F40BF60-89B5-FA12-77C7-18CC7BCEFD38</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE8B1074-8949-E337-1BA4-7D18B140A836"/>
+<colUsage columnID="F6DB408C-D0BB-2481-A5E5-E012926FEA7D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="544F0854-8C3C-CCDA-10CA-D75FCA1D87D0" name="T_PA_PGTO_T_PA_FORN_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>F34E3CD1-3C16-2B6B-209D-477F543E6EC4</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6DB408C-D0BB-2481-A5E5-E012926FEA7D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6A234995-834E-5F45-BE1D-3F23CEADB6F5" name="T_PA_PGTO_T_PA_FORMA_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>9F4EEABA-D23A-A6C9-E236-79E1EFFBD00F</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC58B63F-E6B9-C37D-3EF6-9615F06266E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="98AD80BF-E5D0-35F2-E3D3-F92C4EA55642" name="T_PA_PGTO_T_PA_FIN_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>FF29D5FA-6117-A536-7C4A-DE0C9068C0D5</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B406A039-8F96-1D8B-1EFF-21776B009B7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

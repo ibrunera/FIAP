@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B0F19CDB-AB6A-37C5-3D99-82948B1D6575" name="TB_CURSO">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>52BC0C28-1637-540C-4E20-CB4B046FB98C</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_curso" id="08FCE647-AFC7-B23D-D43B-663C63B16F0D">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>91AA91EE-F80D-45F1-D87B-D7C702306BA9</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_professor" id="16EE5353-8592-DC60-F12E-AEAA859EB977">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>29348935-635B-CE80-A21A-8E0F2979700D</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AD9909B8-6AAB-6A68-B41E-93E675AC2AA9" referredColumn="833AC28E-D2A6-FB70-797F-7A5C7DDDE9F9"/>
+</associations>
+</Column>
+<Column name="nm_curso" id="74A971FA-3BAE-B0BC-82C3-25D68DAF9FA2">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>EE10C2A9-2400-4AB1-DD3F-7B46D3ECE841</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hr_duracao" id="BB40C7BF-13EA-6E29-1917-BA5930CFCA1A">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>C47FB9AA-5A7D-DE5D-D285-3562FF3794AA</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_curso" id="08CD6078-ED0E-656F-4D7C-CD902B38C2AE">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>60DEB56F-3830-C9BA-9B92-D24ECDF7E9CD</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="299F9FD7-A044-A8F3-3A7F-04AA517F2AC0" name="TB_CURSO_PK">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>635211EB-2114-77F2-52F8-132F16DED2CC</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="08FCE647-AFC7-B23D-D43B-663C63B16F0D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7BCDD40A-F6B4-F6CA-8E81-ECDB5F620A4C" name="TB_CURSO_PROF_FK">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>C51DD64B-3B86-7378-D236-2673CBC648AB</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16EE5353-8592-DC60-F12E-AEAA859EB977"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

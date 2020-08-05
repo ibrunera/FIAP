@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="89689D79-7B99-ABCE-F8D3-B3BB54214D0E" name="TB_PROFESSOR">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>5ECFB1ED-AE81-0ED7-C7D9-E3A3028F7376</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_professor" id="833AC28E-D2A6-FB70-797F-7A5C7DDDE9F9">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>B8B884E9-7514-11C9-CA26-BC0B031D20C9</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_curriculo" id="AF6E0375-060D-ACD9-14D4-D4199B511352">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>360C27BA-4196-D36D-A485-E41D6F6C6FA2</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="49159D92-3C7E-5E0E-E187-F34B9654A375" referredColumn="4C6665AD-C60B-029A-3637-5C68BB336C67"/>
+</associations>
+</Column>
+<Column name="nm_professor" id="3F5FF246-9D00-1632-EA0E-9C0BEF34C6BA">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>FC10D1F9-43A9-781F-D637-816F7D1EC8B8</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_email" id="76F5545C-5E9C-3864-2352-34F4F9F641CC">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>C35BC432-1235-3EE1-886C-AA0DF777E269</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1CBB1499-995A-E889-79D1-6DD0457B00C9" name="TB_PROFESSOR_PK">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>DF49C2CE-F43D-4C25-B28E-7ADB3AB42A1D</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="833AC28E-D2A6-FB70-797F-7A5C7DDDE9F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="06B8A35D-94A5-CCD6-E916-E4AC437A8246" name="TB_PROFESSOR__UN">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 20:24:42 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF6E0375-060D-ACD9-14D4-D4199B511352"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="010E8470-ACEA-6E5B-5378-52C13E48CDA8" name="TB_PROFESSOR__IDX">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>F728A868-7B45-5920-482E-97EB82296D1B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="AF6E0375-060D-ACD9-14D4-D4199B511352"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26368F0C-9DC9-2858-CCFA-7B1B69AEEE43" name="TB_PROF_CURR_FK">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>F728A868-7B45-5920-482E-97EB82296D1B</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF6E0375-060D-ACD9-14D4-D4199B511352"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

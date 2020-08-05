@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="10766AEA-42C2-1340-C3D1-D5DCE147B4F8" name="TB_ALUNO">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>A2733624-E582-635E-BEA4-9F936EA57168</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_aluno" id="80BC7EBD-32CA-CA59-0064-BABBEC318A8C">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>FDFB885C-D79E-663E-00EA-6FBC7BCEA57F</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_aluno" id="DDB12A35-FA24-C5AE-79BD-2B71377E1CDC">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>34AD6F8D-05EA-A47A-6BC3-96092B6D549A</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_nascimento" id="CF396927-ABD3-82E6-77B5-A6826785B59D">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>F9557459-990F-95B3-A958-4B2E3CBC276E</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_email" id="5C96FC89-D052-A4BC-EC7F-08824B8FD182">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>1FF69637-558E-D9F9-1D5D-69D953FC971F</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sn_aluno" id="29DC06F1-3691-5FBE-AEF2-7D2A4E69C5B0">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>F5FFB1A8-2FC7-DE6C-CF44-7BDDC5C5F04A</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7E4886C7-363D-8FEC-5BD5-A0895218DF7D" name="TB_ALUNO_PK">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>5BC0FB51-BBF1-98F3-4074-DB585F574EE1</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80BC7EBD-32CA-CA59-0064-BABBEC318A8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

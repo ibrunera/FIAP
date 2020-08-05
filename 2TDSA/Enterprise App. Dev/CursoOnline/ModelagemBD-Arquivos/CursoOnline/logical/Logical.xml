@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="3DFAA6AB-CF1A-8D1E-F2C3-FE3F3FD57CD8" mainViewID="81B05228-1B31-C6EA-36C3-3D2A7E1003C6">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:02:21 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

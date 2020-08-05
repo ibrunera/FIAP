@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="PayNapple_ModeloRelacional" id="364C1280-AF8B-5F63-6DA8-451CB574BCAC" version="3.5">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 11:54:17 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>364C1280-AF8B-5F63-6DA8-451CB574BCAC</designId>
+</OSDM_Design>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="0F7E0B05-410B-DC05-72C0-67A16B843F8B" mainViewID="AF99CD0D-1CB0-D40E-F8E4-3BB618B3EEE9">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 11:54:18 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

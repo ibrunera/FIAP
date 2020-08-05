@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Nac 01</string>
+    <string name="imagem_anterior">Imagem Anterior</string>
+    <string name="proxima_imagem">Próxima Imagem</string>
+</resources>

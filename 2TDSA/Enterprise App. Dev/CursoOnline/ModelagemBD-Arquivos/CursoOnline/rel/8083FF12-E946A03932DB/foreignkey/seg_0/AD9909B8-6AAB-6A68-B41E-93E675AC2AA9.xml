@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AD9909B8-6AAB-6A68-B41E-93E675AC2AA9" containerWithKeyObject="B0F19CDB-AB6A-37C5-3D99-82948B1D6575" localFKIndex="7BCDD40A-F6B4-F6CA-8E81-ECDB5F620A4C" name="TB_CURSO_PROF_FK">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:31:38 UTC</createdTime>
+<generatorID>C51DD64B-3B86-7378-D236-2673CBC648AB</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<referredTableLongName>TB_PROFESSOR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>89689D79-7B99-ABCE-F8D3-B3BB54214D0E</referredTableID>
+<keyObject>1CBB1499-995A-E889-79D1-6DD0457B00C9</keyObject>
+<referredKeyID>1CBB1499-995A-E889-79D1-6DD0457B00C9</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_professor</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

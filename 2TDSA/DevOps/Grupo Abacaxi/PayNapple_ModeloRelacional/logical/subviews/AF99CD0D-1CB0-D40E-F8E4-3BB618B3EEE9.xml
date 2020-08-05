@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.logical.DPVLogical" name="Logical" id="AF99CD0D-1CB0-D40E-F8E4-3BB618B3EEE9">
+<createdBy>logonrmlocal</createdBy>
+<modifiedBy>logonrmlocal</modifiedBy>
+<createdTime>2020-03-03 12:06:54 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="005D98E5-F317-6C0C-3A25-6E180849938E" otype="Note" vid="9EC1C306-C31C-DEBE-3D3F-1AAB1A9CC0F8">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="19" y="24" width="224" height="93"/>
+<comment>PayNapple - Contas a Pagar&lt;br/&gt;RM82585	Ágatha Nayara&lt;br/&gt;RM81214	Bruno Teixeira da Silva&lt;br/&gt;RM80387	Gabriel Matrella&lt;br/&gt;RM83931	Leonardo Santos de Souza&lt;br/&gt;</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="2DED953E-2680-21BA-2B0D-D2C774622DCC" otype="Entity" vid="3D644DF2-48BC-9E26-B676-FF2BD4B71313">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="12" y="318" width="123" height="111"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="7F5282D5-B7C1-0FCD-104C-9386199E133F" otype="Entity" vid="6EE534FF-F7C1-4F70-A3FE-D00B96DA8479">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="298" y="155" width="183" height="106"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="AD2984DB-DD1B-7F3C-3D22-A8F6E91FC260" otype="Entity" vid="9B80CA11-6FED-8016-760A-27AE0C30B9EF">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="29" y="150" width="214" height="108"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="AF29B4C0-FF46-68B6-363E-81BCB4AB26BC" otype="Entity" vid="7448FA7B-682A-84B4-A4A9-F10984ED546F">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="175" y="317" width="119" height="111"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="BCFB5C51-3027-9A09-4306-E5E09B369A06" otype="Entity" vid="10F7496E-F042-F722-1DBF-1099AE0C2899">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="308" y="24" width="168" height="93"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="EDD5A427-FF77-1D3E-9D6F-510B8E161669" otype="Note" vid="00CDC758-90D8-00A7-5BC8-26745476ABF4">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="37" y="1119" width="224" height="93"/>
+<comment>PayNapple - Contas a Pagar&lt;br/&gt;RM82585	Ágatha Nayara&lt;br/&gt;RM81214	Bruno Teixeira da Silva&lt;br/&gt;RM80387	Gabriel Matrella&lt;br/&gt;RM83931	Leonardo Santos de Souza&lt;br/&gt;</comment>
+</OView>
+</objectViews>
+<connectors>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="141DA3BF-3726-0A32-AD37-F57A756F97CA" otype="Relation" vid_source="6EE534FF-F7C1-4F70-A3FE-D00B96DA8479" vid_target="10F7496E-F042-F722-1DBF-1099AE0C2899">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="392" y="155"/>
+<point x="392" y="117"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="9F4EEABA-D23A-A6C9-E236-79E1EFFBD00F" otype="Relation" vid_source="7448FA7B-682A-84B4-A4A9-F10984ED546F" vid_target="9B80CA11-6FED-8016-760A-27AE0C30B9EF">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="209" y="317"/>
+<point x="209" y="258"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="F34E3CD1-3C16-2B6B-209D-477F543E6EC4" otype="Relation" vid_source="6EE534FF-F7C1-4F70-A3FE-D00B96DA8479" vid_target="9B80CA11-6FED-8016-760A-27AE0C30B9EF">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="298" y="206"/>
+<point x="243" y="206"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="FF29D5FA-6117-A536-7C4A-DE0C9068C0D5" otype="Relation" vid_source="3D644DF2-48BC-9E26-B676-FF2BD4B71313" vid_target="9B80CA11-6FED-8016-760A-27AE0C30B9EF">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="82" y="318"/>
+<point x="82" y="258"/>
+</points>
+</Connector>
+</connectors>
+</Diagram>

@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FBA7ED14-53AE-44F3-AD7D-8346D8619DF5" name="T_PA_FINALIDADE">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>2DED953E-2680-21BA-2B0D-D2C774622DCC</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_finalidade" id="D7FA6FFC-F09A-C8A1-2B6A-DA0B645A3655">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código da Finalidade  com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>3109245D-5E4F-F45A-9331-30C284EE161D</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_finalidade" id="43ADBA04-FF6A-0C25-6994-A77BC44635C7">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Descrição da finalidade do pagamento (Exemplos: Imposto, Conta Telefone, Matéria Prima)</commentInRDBMS>
+<generatorID>FBA45362-9DFC-A14D-19D3-0E2B1B061257</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="408DF8B6-DC33-51F1-3F8E-A9F5DE4CF8D2" name="T_PA_FINALIDADE_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>BD644AD4-ED17-474F-1EC7-F8F8AC843C34</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7FA6FFC-F09A-C8A1-2B6A-DA0B645A3655"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

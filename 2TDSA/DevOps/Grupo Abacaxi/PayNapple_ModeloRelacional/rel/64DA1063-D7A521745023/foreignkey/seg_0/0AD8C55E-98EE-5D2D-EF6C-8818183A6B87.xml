@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0AD8C55E-98EE-5D2D-EF6C-8818183A6B87" containerWithKeyObject="7857AAA6-C622-7773-BEF4-7798E67BF14B" localFKIndex="6A234995-834E-5F45-BE1D-3F23CEADB6F5" name="T_PA_PGTO_T_PA_FORMA_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>9F4EEABA-D23A-A6C9-E236-79E1EFFBD00F</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<referredTableLongName>T_PA_FORMA_PGTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BEDD8487-4E75-5B3D-8DC7-721EBD4955D2</referredTableID>
+<keyObject>74A8F162-101C-61C6-6693-020217F50FE8</keyObject>
+<referredKeyID>74A8F162-101C-61C6-6693-020217F50FE8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_forma_pgto</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

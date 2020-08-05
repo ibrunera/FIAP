@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="52BC0C28-1637-540C-4E20-CB4B046FB98C" name="TB_CURSO">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:13:23 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_curso" id="91AA91EE-F80D-45F1-D87B-D7C702306BA9">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:13:33 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_curso" id="EE10C2A9-2400-4AB1-DD3F-7B46D3ECE841">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:13:38 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_duracao" id="C47FB9AA-5A7D-DE5D-D285-3562FF3794AA">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:13:48 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_curso" id="60DEB56F-3830-C9BA-9B92-D24ECDF7E9CD">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:14:09 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_professor" id="29348935-635B-CE80-A21A-8E0F2979700D">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:19:33 UTC</createdTime>
+<generatorID>C51DD64B-3B86-7378-D236-2673CBC648AB</generatorID>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<referedAttribute>B8B884E9-7514-11C9-CA26-BC0B031D20C9</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="635211EB-2114-77F2-52F8-132F16DED2CC" name="TB_CURSO PK">
+<createdBy>bteix</createdBy>
+<createdTime>2020-04-25 19:13:37 UTC</createdTime>
+<ownerDesignName>CursoOnline</ownerDesignName>
+<engineerTo>
+<item key="8083FF12-7FFA-1BE0-9FD9-E946A03932DB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>91AA91EE-F80D-45F1-D87B-D7C702306BA9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

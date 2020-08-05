@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AD2984DB-DD1B-7F3C-3D22-A8F6E91FC260" name="T_PA_PAGAMENTO">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:14:07 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_conta" id="CBED566C-3529-90F1-44F6-8DBE17C0506D">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:14:46 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_fornecedor" id="F8CE1B26-40AD-F87C-E57D-B1A951E362C2">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:17:49 UTC</createdTime>
+<generatorID>F34E3CD1-3C16-2B6B-209D-477F543E6EC4</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<referedAttribute>58E73C15-D41E-475C-4FD0-35F568C9C487</referedAttribute>
+<use>0</use>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_forma_pgto" id="8CCE0B6A-D470-A6C9-E987-616D6EFC77F2">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:20:43 UTC</createdTime>
+<generatorID>9F4EEABA-D23A-A6C9-E236-79E1EFFBD00F</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<referedAttribute>469E5720-79C2-594D-23CF-A3F2C6DCDF94</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_finalidade" id="5F00B039-0331-9544-609B-BF5094D511DC">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:21:46 UTC</createdTime>
+<generatorID>FF29D5FA-6117-A536-7C4A-DE0C9068C0D5</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<referedAttribute>3109245D-5E4F-F45A-9331-30C284EE161D</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_status" id="5F51C161-2439-C27B-FF9B-08CB5462C88C">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:14:58 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_vencimento" id="F4B967BA-30E2-7CFC-7BB9-9C5D8D4EAC8D">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:16:27 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_emissao" id="D3A7428B-0FCE-E12D-BB72-E080D0F84FA9">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:17:01 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_valor" id="E5B4241C-7621-5D3B-60EF-F0CE111045EC">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:17:12 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4F40BF60-89B5-FA12-77C7-18CC7BCEFD38" name="T_PA_CONTA PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:14:55 UTC</createdTime>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="64DA1063-D8AE-EC1B-8BA4-D7A521745023" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CBED566C-3529-90F1-44F6-8DBE17C0506D</attributeRef>
+<attributeRef>F8CE1B26-40AD-F87C-E57D-B1A951E362C2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

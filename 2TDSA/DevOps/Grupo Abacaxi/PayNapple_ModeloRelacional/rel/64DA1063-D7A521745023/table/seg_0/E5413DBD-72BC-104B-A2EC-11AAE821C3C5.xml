@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E5413DBD-72BC-104B-A2EC-11AAE821C3C5" name="T_PA_FORNECEDOR">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>7F5282D5-B7C1-0FCD-104C-9386199E133F</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_fornecedor" id="93E48374-310C-5A20-3DF4-231C80BE8CD1">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código do Fornecedor com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>58E73C15-D41E-475C-4FD0-35F568C9C487</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_fornecedor" id="1BCC3DEE-9074-3354-27D4-5A55126E55A8">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Nome do fornecedor será o Nome Fantasia da Empresa</commentInRDBMS>
+<generatorID>C8816F11-0D4C-BE23-8E63-BAED1A1474F9</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_razao_social" id="86437EF7-E4CB-CDD8-2C96-C5D4711FBFB2">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Razão Social do Fornecedor</commentInRDBMS>
+<generatorID>8332BD16-3E82-F51C-6EBE-4A75506F7292</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_telefone" id="10D9484D-79E1-39AA-0606-5B3A27B689F9">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Telefone do fornecedor</commentInRDBMS>
+<generatorID>2DE5BD0B-D52A-AAAE-732D-9D32B71C5FF6</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_cnpj_cpf" id="C8C139CA-9FA9-0EED-6CB1-125FCFFA3677">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>CNPJ ou CPF do Fornecedor</commentInRDBMS>
+<generatorID>21364C97-8E7F-C636-2F44-D832BA0F9C68</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_email" id="9BF80A38-A01C-5E9E-5B11-7E0AD2340242">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>E-mail do fornecedor.</commentInRDBMS>
+<generatorID>24CA37AF-4644-D84F-ADA9-BADD1EE23F6D</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C40A5651-BC6B-5D57-F2D7-643C344E6739" name="T_PA_FORNECEDOR_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>841243EE-DAF0-FE2B-54FE-E0F56587172B</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93E48374-310C-5A20-3DF4-231C80BE8CD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

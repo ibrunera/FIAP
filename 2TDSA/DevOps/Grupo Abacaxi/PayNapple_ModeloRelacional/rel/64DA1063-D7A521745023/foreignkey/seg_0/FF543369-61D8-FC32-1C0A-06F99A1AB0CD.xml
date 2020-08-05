@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FF543369-61D8-FC32-1C0A-06F99A1AB0CD" containerWithKeyObject="7857AAA6-C622-7773-BEF4-7798E67BF14B" localFKIndex="98AD80BF-E5D0-35F2-E3D3-F92C4EA55642" name="T_PA_PGTO_T_PA_FIN_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>FF29D5FA-6117-A536-7C4A-DE0C9068C0D5</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<referredTableLongName>T_PA_FINALIDADE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FBA7ED14-53AE-44F3-AD7D-8346D8619DF5</referredTableID>
+<keyObject>408DF8B6-DC33-51F1-3F8E-A9F5DE4CF8D2</keyObject>
+<referredKeyID>408DF8B6-DC33-51F1-3F8E-A9F5DE4CF8D2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_finalidade</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

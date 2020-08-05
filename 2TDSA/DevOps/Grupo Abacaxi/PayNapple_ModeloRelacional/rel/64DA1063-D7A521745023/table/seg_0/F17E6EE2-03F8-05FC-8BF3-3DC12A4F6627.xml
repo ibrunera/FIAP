@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F17E6EE2-03F8-05FC-8BF3-3DC12A4F6627" name="T_PA_CONTRATO">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>BCFB5C51-3027-9A09-4306-E5E09B369A06</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_contrato" id="232A7ED7-6415-076C-2CF6-7914E6AF34BD">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código do Contrato  com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>73336A2D-5343-939B-D44C-8E6E29A725FD</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_fornecedor" id="FB9EEEF0-541F-6CF3-AB0A-9338A9E393B3">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Código do Fornecedor com até 4 digitos, será gerado automaticamente por uma sequência no BD.</commentInRDBMS>
+<generatorID>8813BF17-004A-47C9-A6CA-F7437299196F</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E98025E1-51CA-7FCE-034C-C859E821F22A" referredColumn="93E48374-310C-5A20-3DF4-231C80BE8CD1"/>
+</associations>
+</Column>
+<Column name="dt_validade" id="043EF8E2-0644-2D10-8828-B8C1888A4BD7">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<commentInRDBMS>Data de validade con contrato será DD/MM/YYYY</commentInRDBMS>
+<generatorID>06EDCF43-3B71-71ED-A2E6-DE3D8C29E589</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D6FBDFDE-2B0D-08DA-B64F-43BC48E97653" name="T_PA_CONTRATO_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>B058F253-4472-0833-EEBF-2C2EB1FA7205</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB9EEEF0-541F-6CF3-AB0A-9338A9E393B3"/>
+<colUsage columnID="232A7ED7-6415-076C-2CF6-7914E6AF34BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3DC9AC7F-BC0A-455F-CC38-E3A04FA31466" name="T_PA_CONT_T_PA_FORN_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>141DA3BF-3726-0A32-AD37-F57A756F97CA</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB9EEEF0-541F-6CF3-AB0A-9338A9E393B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

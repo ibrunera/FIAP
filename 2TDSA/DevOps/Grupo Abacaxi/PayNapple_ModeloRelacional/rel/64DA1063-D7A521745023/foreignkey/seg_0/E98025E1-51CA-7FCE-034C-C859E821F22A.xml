@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E98025E1-51CA-7FCE-034C-C859E821F22A" containerWithKeyObject="F17E6EE2-03F8-05FC-8BF3-3DC12A4F6627" localFKIndex="3DC9AC7F-BC0A-455F-CC38-E3A04FA31466" name="T_PA_CONT_T_PA_FORN_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2020-03-03 12:29:24 UTC</createdTime>
+<generatorID>141DA3BF-3726-0A32-AD37-F57A756F97CA</generatorID>
+<ownerDesignName>PayNapple_ModeloRelacional</ownerDesignName>
+<referredTableLongName>T_PA_FORNECEDOR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E5413DBD-72BC-104B-A2EC-11AAE821C3C5</referredTableID>
+<keyObject>C40A5651-BC6B-5D57-F2D7-643C344E6739</keyObject>
+<referredKeyID>C40A5651-BC6B-5D57-F2D7-643C344E6739</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_fornecedor</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
