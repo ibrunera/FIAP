@@ -1,0 +1,7 @@
+Funcionalidades de Input:
+- O sistema cadastra usuários.
+- O sistema faz LOGIN de usuarios cadastrados.
+
+Funcionalidades de Output:
+- Após o cadastro o RM é gerado no banco e enviado para Tela para o usuário.
+-O sistema recupera a senha do usuário na tela esqueceu-senha.jsp.

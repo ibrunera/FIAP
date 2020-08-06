@@ -1,0 +1,360 @@
+********************************* COMANDOS DDL ***********************************
+
+
+--Componentes do Grupo:
+--   RM  -  Nome completo
+--81214 - Bruno Teixeira da Silva
+--84013 - Claudia Park
+--83998 - Filipe dos Santos Fernandes
+--83579 - Ingrid Pinheiro
+--82458 - Thiago Pintor do Vale Correia
+
+-- Gerado por Oracle SQL Developer Data Modeler 19.2.0.182.1216
+--   em:        2019-10-19 14:25:23 BRT
+--   site:      Oracle Database 12c
+--   tipo:      Oracle Database 12c
+
+/*
+DROP TABLE T_EFBIT_CAPITULO         CASCADE CONSTRAINTS;
+DROP TABLE T_EFBIT_DISCIPLINA       CASCADE CONSTRAINTS; 
+DROP TABLE T_EFBIT_EXECUCAO         CASCADE CONSTRAINTS; 
+DROP TABLE T_EFBIT_MATRICULA        CASCADE CONSTRAINTS; 
+DROP TABLE T_EFBIT_USUARIO          CASCADE CONSTRAINTS;
+*/
+
+CREATE TABLE t_efbit_capitulo (
+    cd_capitulo     NUMBER(4) NOT NULL,
+    cd_disciplina   NUMBER(3) NOT NULL,
+    nm_capitulo     VARCHAR2(100) NOT NULL,
+    ds_pdf          VARCHAR2(255) NOT NULL,
+    ds_video        VARCHAR2(255) NOT NULL,
+    st_capitulo     NUMBER(1) NOT NULL
+);
+
+ALTER TABLE t_efbit_capitulo ADD CONSTRAINT t_efbit_capitulo_pk PRIMARY KEY ( cd_capitulo,
+                                                                              cd_disciplina );
+
+CREATE TABLE t_efbit_disciplina (
+    cd_disciplina   NUMBER(3) NOT NULL,
+    nm_disciplina   VARCHAR2(100) NOT NULL,
+    ds_disciplina   VARCHAR2(255) NOT NULL,
+    st_disciplina   NUMBER(1) NOT NULL
+);
+
+ALTER TABLE t_efbit_disciplina ADD CONSTRAINT t_efbit_disciplina_pk PRIMARY KEY ( cd_disciplina );
+
+ALTER TABLE t_efbit_disciplina ADD CONSTRAINT t_efbit_disciplina__un UNIQUE ( nm_disciplina );
+
+CREATE TABLE t_efbit_execucao (
+    cd_execucao     VARCHAR2(6) NOT NULL,
+    cd_matricula    VARCHAR2(6) NOT NULL,
+    cd_capitulo     NUMBER(4) NOT NULL,
+    cd_usuario      NUMBER(5) NOT NULL,
+    cd_disciplina   NUMBER(3) NOT NULL,
+    nr_acessos      NUMBER(9) NOT NULL,
+    nr_avaliacao    NUMBER(1) NOT NULL
+);
+
+ALTER TABLE t_efbit_execucao ADD CONSTRAINT t_efbit_execucao_pk PRIMARY KEY ( cd_execucao );
+
+CREATE TABLE t_efbit_matricula (
+    cd_matricula    VARCHAR2(6) NOT NULL,
+    cd_usuario      NUMBER(5) NOT NULL,
+    cd_disciplina   NUMBER(3) NOT NULL,
+    dt_matricula    DATE NOT NULL
+);
+
+ALTER TABLE t_efbit_matricula ADD CONSTRAINT t_efbit_matricula_pk PRIMARY KEY ( cd_matricula,
+                                                                                cd_usuario );
+
+CREATE TABLE t_efbit_usuario (
+    cd_usuario      NUMBER(5) NOT NULL,
+    nm_usuario      VARCHAR2(100) NOT NULL,
+    ds_cpf          VARCHAR2(100) NOT NULL,
+    ds_email        VARCHAR2(100) NOT NULL,
+    sn_senha        VARCHAR2(100) NOT NULL,
+    dt_nascimento   DATE NOT NULL,
+    nr_tipo         NUMBER(2) NOT NULL
+);
+
+ALTER TABLE t_efbit_usuario ADD CONSTRAINT t_efbit_usuario_pk PRIMARY KEY ( cd_usuario );
+
+ALTER TABLE t_efbit_usuario ADD CONSTRAINT t_efbit_usuario__un UNIQUE ( ds_email,
+                                                                        ds_cpf );
+
+ALTER TABLE t_efbit_capitulo
+    ADD CONSTRAINT t_efbit_cap_disc_fk FOREIGN KEY ( cd_disciplina )
+        REFERENCES t_efbit_disciplina ( cd_disciplina );
+
+ALTER TABLE t_efbit_execucao
+    ADD CONSTRAINT t_efbit_exec_cap_fk FOREIGN KEY ( cd_capitulo,
+                                                     cd_disciplina )
+        REFERENCES t_efbit_capitulo ( cd_capitulo,
+                                      cd_disciplina );
+
+ALTER TABLE t_efbit_execucao
+    ADD CONSTRAINT t_efbit_exec_mat_fk FOREIGN KEY ( cd_matricula,
+                                                     cd_usuario )
+        REFERENCES t_efbit_matricula ( cd_matricula,
+                                       cd_usuario );
+
+ALTER TABLE t_efbit_matricula
+    ADD CONSTRAINT t_efbit_mat_disc_fk FOREIGN KEY ( cd_disciplina )
+        REFERENCES t_efbit_disciplina ( cd_disciplina );
+
+ALTER TABLE t_efbit_matricula
+    ADD CONSTRAINT t_efbit_mat_usu_fk FOREIGN KEY ( cd_usuario )
+        REFERENCES t_efbit_usuario ( cd_usuario );
+
+
+
+-- Relat�rio do Resumo do Oracle SQL Developer Data Modeler: 
+-- 
+-- CREATE TABLE                             5
+-- CREATE INDEX                             0
+-- ALTER TABLE                             12
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           0
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          0
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- TSDP POLICY                              0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0
+
+
+
+******************************* COMANDOS DML **************************************
+
+--Componentes do Grupo:
+--   RM  -  Nome completo
+--81214 - Bruno Teixeira da Silva
+--84013 - Claudia Park
+--83998 - Filipe dos Santos Fernandes
+--83579 - Ingrid Pinheiro
+--82458 - Thiago Pintor do Vale Correia
+
+--INSERINDO USU�RIOS
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10000,'Clinton',37963740286,'elit@acfeugiat.net','JOV33MLS7QD','29/07/2006',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10001,'Plato',32129591033,'laoreet.posuere.enim@parturientmontesnascetur.co.uk','NCD59SUA3MU','13/06/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10002,'Quinn',43130280674,'Donec@duiCum.ca','LQB74CFI1PR','06/03/2009',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10003,'Joelle',20127841998,'et.magnis@metus.org','MRQ27HNY4IJ','06/02/2007',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10004,'Stewart',45932957773,'iaculis.enim@ametultriciessem.ca','HAU67VKH3GC','25/05/1992',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10005,'Levi',48333060295,'non.nisi.Aenean@acmattis.net','XHU34NLA0ZQ','13/05/1992',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10006,'Kuame',32396732681,'mauris.ipsum@pretiumet.com','NKH04VNT2BI','10/09/1992',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10007,'Cruz',44099773523,'et.magnis.dis@sitamet.org','ATP73WFU2VW','19/07/1998',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10008,'Laith',14125150218,'est.ac@odio.net','WFE45AAP7LL','22/03/2006',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10009,'Uta',14319970924,'Duis.a.mi@Proin.org','ZAV37KZR5OV','16/12/1996',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10010,'Taylor',16918680612,'pharetra@Donecporttitor.net','KYN30HKE3CU','14/08/2006',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10011,'Uriel',21966958064,'dolor@feugiat.co.uk','RNN31CCM1TH','12/05/1997',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10012,'Maisie',20262988005,'nec@fermentumarcu.net','CCW00TWZ0RA','26/11/2001',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10013,'Caleb',42116922774,'Quisque.purus.sapien@liberoDonec.ca','SWY16OUY3HO','06/08/1999',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10014,'Fallon',37181408592,'Mauris@ametconsectetuer.co.uk','ODE66FCP5EI','17/02/1995',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10015,'Melissa',43993023578,'vel.est@justo.net','WOQ65FEU6TL','01/09/2000',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10016,'Jermaine',39961659834,'turpis.non.enim@anteVivamusnon.net','AWS59SIE1CT','14/07/2006',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10017,'Drew',10621025040,'Vivamus.rhoncus.Donec@ametornarelectus.net','UCO54FFG2KI','24/04/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10018,'Steven',47952451651,'nulla.magna@antebibendum.com','GHB51TSX1KO','10/11/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10019,'Dustin',33423958775,'magna.Cras.convallis@ac.net','DTR22KZA5TL','07/10/2009',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10020,'Lillian',24039827883,'ut@necenim.org','OGR65YUN1WH','19/12/1999',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10021,'Melanie',43052669186,'erat.vitae@tortoratrisus.edu','ODO70KBO6KV','03/08/2002',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10022,'Blaze',23354242034,'congue.a.aliquet@dui.co.uk','QXG66VNF2HH','12/02/2000',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10023,'Mikayla',37053884119,'ligula@Nullafacilisi.edu','DDG83LKG9OC','13/01/2008',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10024,'Dane',44854098671,'Ut.tincidunt.vehicula@elitpede.co.uk','HKJ71ADI3TZ','10/10/1990',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10025,'Dillon',42893694900,'lorem@Vestibulumaccumsanneque.co.uk','VRC03YVA0IZ','04/02/2002',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10026,'Shana',26021107677,'Vestibulum.ante.ipsum@sed.net','AHW51RKB5NJ','25/05/2007',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10027,'Roth',41443764605,'id@SeddictumProin.edu','GVM19VSF2BT','22/12/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10028,'Nathan',41451680232,'ut.pharetra@placeratvelitQuisque.org','XDE33TWR0GT','25/08/2002',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10029,'Ima',30521769822,'lacus@dolorsit.com','SEM59HIN8PC','04/10/1997',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10030,'Carolyn',41908095163,'ac.orci.Ut@In.net','KHW60EZZ3PE','09/09/1992',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10031,'Janna',35501096826,'Cras.vulputate@atfringilla.net','JWJ78BVF8RD','20/02/2008',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10032,'Halee',12594372890,'dolor@nulla.co.uk','IZS97NGY7EK','04/11/1990',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10033,'Clark',36873283722,'dui.nec.tempus@malesuadaInteger.net','WVE49HNM8SK','26/02/2009',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10034,'Christine',36121990495,'semper.auctor.Mauris@consectetuereuismod.edu','OYY86LGS1XU','11/05/1997',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10035,'Charde',25609615482,'erat.Sed@miAliquamgravida.org','XZC83VQE7AP','24/03/1997',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10036,'Owen',15507550779,'dis@porttitor.net','DLU44RFT8DS','18/11/1995',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10037,'Maya',33008119501,'lorem.ut.aliquam@Nullafacilisi.edu','FGW45BMF7WN','01/09/1997',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10038,'Amos',40466642212,'purus@parturient.com','SOD93BRY7NW','10/03/1990',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10039,'Cassandra',23247253392,'pharetra@odio.com','TLM77SBR9BF','14/09/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10040,'Kirk',23681159671,'conubia.nostra.per@idnunc.co.uk','CJL80IDB4JI','19/07/2004',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10041,'Ferdinand',39595757723,'Mauris.molestie@facilisisloremtristique.com','EJM08BLX2JF','03/08/2010',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10042,'Macy',46596867610,'interdum@Fuscemi.edu','QRD00IZA1YR','03/04/1998',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10043,'Isabella',10175290256,'lobortis.tellus@rutrum.co.uk','VZD98YZA2DM','09/03/2005',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10044,'Alexandra',45232194178,'Cras@enim.org','MEE31QMC5PB','27/10/2007',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10045,'Amy',29241329730,'eleifend.vitae.erat@ametultriciessem.edu','QUX02KEE6IR','13/09/2008',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10046,'Jin',40070494116,'amet.faucibus@Maecenasornareegestas.edu','NAM46NOB1DU','12/11/2004',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10047,'Indigo',32759503014,'metus.In.lorem@tempus.co.uk','KJJ77RMV2QR','26/06/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10048,'Philip',23226854373,'tellus@luctussit.ca','OZF86EEK2XR','02/04/2000',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10049,'Randall',19076637663,'Vivamus.molestie@risus.co.uk','BZD78MKI4WR','09/02/1998',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10050,'Rose',48598785121,'enim.commodo@tristiquesenectus.ca','ZQT18XQP1NL','14/03/2006',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10051,'Beck',30467014611,'vel.sapien.imperdiet@Cras.com','BHI02DUJ4AQ','14/01/1993',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10052,'Brandon',28117907494,'Nulla@ornare.com','JTO62STA1BB','11/02/2005',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10053,'Hammett',43085383810,'cursus@convallisantelectus.ca','OME23TVN6HD','19/01/1990',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10054,'Camille',25475056376,'fringilla@arcu.org','CGX43KIO6ZO','27/11/1997',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10055,'Alan',40913275779,'sit.amet.lorem@ultrices.co.uk','MOK50UVR7GC','16/05/2004',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10056,'Lewis',42664526329,'vestibulum.massa.rutrum@enim.org','IEA87IKE2RK','14/03/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10057,'Nina',26975478083,'felis.purus.ac@adipiscing.net','CGV49FUG5GI','30/07/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10058,'Jonah',11712459176,'venenatis@dui.org','RFJ93IFI2EA','24/03/2008',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10059,'Leo',42482667920,'placerat.augue.Sed@ullamcorpermagnaSed.co.uk','YXQ07HMO5YX','08/09/2001',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10060,'Jack',27059709076,'Morbi.non@egestas.org','WGF77PKF8RT','02/07/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10061,'Igor',35474254172,'sit@neceuismod.edu','EIC67HLC6YD','17/04/1995',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10062,'Alec',14667252414,'a.enim@Donecest.edu','AGW64SSC7DT','22/09/2009',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10063,'Cherokee',32680231016,'odio@condimentumegetvolutpat.co.uk','ORZ72PEZ1PH','25/10/2002',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10064,'Buffy',38716248218,'Praesent.luctus.Curabitur@Sedmolestie.edu','WYM95SIN4UV','06/11/2001',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10065,'Risa',46755601839,'In.nec.orci@adipiscingnonluctus.net','AIK17FAH2RF','21/06/2009',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10066,'Piper',47901037820,'dictum@pede.org','GKO27VTY8MI','19/09/2000',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10067,'Ray',16031952258,'libero.lacus.varius@dapibusid.edu','JOE74CGZ7TQ','28/12/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10068,'Griffith',22114028744,'sem@sollicitudincommodo.co.uk','OXI48QWN0QV','10/12/2000',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10069,'Hayley',28848216217,'neque.tellus.imperdiet@vel.net','VVA73URF6MI','18/01/2002',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10070,'Alexandra',38125163783,'Donec@eudoloregestas.ca','TUH15FAC2UY','25/08/1996',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10071,'Tanek',17860148996,'ad.litora.torquent@congueIn.edu','WXW38TBQ8MB','19/03/2009',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10072,'Omar',39977725074,'ac.orci.Ut@Aliquam.ca','GFQ92KCT9UI','19/03/2000',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10073,'Tanisha',38477516361,'adipiscing.Mauris.molestie@semutdolor.net','NBC93PAQ1BB','10/07/1992',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10074,'Blaze',23789995313,'In@eueleifend.net','YND79SCM7BL','02/06/2004',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10075,'Quin',44706825130,'libero@scelerisquedui.ca','JTO69BFN6XD','04/01/1992',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10076,'Hasad',49164734968,'Morbi@vulputatevelit.edu','ACB93JVN2PQ','11/09/2001',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10077,'Ethan',42793628406,'nunc.sed@feugiat.ca','BLY70AIR7MW','26/01/1996',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10078,'Jenna',49295306113,'aliquet.magna.a@rutrumurna.ca','OKD59SNX8HW','11/07/2009',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10079,'Ali',11825062967,'eu.tellus.eu@facilisis.com','LOJ51KDL4QF','12/03/1996',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10080,'Dillon',33724274561,'Quisque@tellusjustosit.org','SRL64HFY9BY','11/11/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10081,'Kibo',41945735812,'Nullam.velit.dui@Vivamusnonlorem.co.uk','GXE99BAA8OC','06/07/2006',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10082,'Garrett',14859172646,'nec@Curabitur.co.uk','KKZ87HMG5KD','24/02/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10083,'Linda',32227604780,'a.arcu.Sed@justo.edu','VJB52MBD8XJ','17/08/1993',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10084,'Kylee',21677981112,'varius@scelerisquesedsapien.edu','TRS40NFP7NY','07/12/2001',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10085,'Ian',43079429232,'eget@augue.com','BBT98RJG3NB','17/12/2005',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10086,'Jaquelyn',15548826083,'Curabitur.dictum.Phasellus@accumsaninterdumlibero.co.uk','TNO40GDP5XV','16/04/2005',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10087,'Winter',16875183563,'metus.sit.amet@vitaesemper.edu','CQS79NGW4TO','01/04/2010',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10088,'Eleanor',38171095792,'lacinia@risusatfringilla.com','BVJ50IQC1YZ','21/01/1998',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10089,'Ava',42894657310,'a.ultricies.adipiscing@uterat.com','SBV62AET7GM','26/08/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10090,'Grant',46103465781,'elit.pretium.et@sociisnatoquepenatibus.net','WGF28XHJ7CC','20/12/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10091,'Mercedes',31459719241,'Etiam@etipsumcursus.com','GBG05ZZG2HX','26/03/1996',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10092,'Chaney',39726911914,'leo@penatibuset.net','ILB98RRH5MV','02/09/2008',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10093,'Priscilla',39483829681,'a.malesuada@Morbi.ca','PPX58SSX7AA','17/04/2001',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10094,'Geraldine',39405451976,'varius.ultrices@lectus.ca','ZJJ98KQC4RX','22/02/1998',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10095,'Hop',17179792188,'eu.dui.Cum@Sed.co.uk','EGB12HZE9CT','14/06/1999',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10096,'Alana',43687407133,'Donec@mauriseu.net','BYP18DPE7WB','07/07/2005',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10097,'Cassady',22058671601,'ut.odio@convalliserateget.edu','PBZ38POB2ZA','05/12/2003',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10098,'Lara',46803081800,'dui.quis.accumsan@aliquet.ca','BLK61AQZ7XG','24/05/1991',1);
+INSERT INTO T_EFBIT_USUARIO (cd_usuario,nm_usuario,ds_cpf,ds_email,sn_senha,dt_nascimento,nr_tipo) VALUES (10099,'Calvin',44367951211,'diam.lorem.auctor@risusquisdiam.ca','BTF54NZU0KL','14/12/1999',1);
+
+--INSERINDO DISCIPLINAS DE NIVELAMENTO
+INSERT INTO T_EFBIT_DISCIPLINA (cd_disciplina, nm_disciplina, ds_disciplina, st_disciplina) VALUES (100, 'Portugu�s', 'Disciplina de nivelamento de portugu�s', 1);
+INSERT INTO T_EFBIT_DISCIPLINA (cd_disciplina, nm_disciplina, ds_disciplina, st_disciplina) VALUES (101, 'Matem�tica','Disciplina de nivelamento de matem�tica', 2);
+INSERT INTO T_EFBIT_DISCIPLINA (cd_disciplina, nm_disciplina, ds_disciplina, st_disciplina) VALUES (102, 'Algoritmos', 'Disciplina de nivelamento de algoritmo', 3);
+
+--INSERINDO CAPITULO
+
+--PORTUGU�S
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1101,100,'Comunica��o Empresarial','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1102,100,'T�cnicas de Leitura e Interpreta��o de Texto','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1103,100,'A Coes�o Textual e a Constru��o do Sentido','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1104,100,'Coer�ncia - A unidade do texto','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1105,100,'Storytelling','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1106,100,'Conceito de Startup','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1107,100,'Modelo de Neg�cio - Canvas','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1108,100,'O Moderno Texto Empresarial','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1109,100,'Ccaracter�sticas do Moderno Texto Empresarial','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1110,100,'Erros Empresariais Comuns','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1111,100,'T�cnicas de Apresenta��o','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1112,100,'Pitch','pitch.jps','videoPitch.jps',1);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1113,100,'Gram�tica Normativa Aplicada � Leitura e Produ��o Textual','erro.jsp','erro.jsp',0);
+--MATEM�TICA
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1101,101,'Revis�o de Fun��es','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1102,101,'Fun��es e suas Aplica��es Exponenciais','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1103,101,'Limite e suas Aplica��es','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1104,101,'Derivadas','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1105,101,'Integrais','erro.jsp','erro.jsp',0);
+--ALGORITMOS 
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1101,102,'Principios da Programa��o','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1102,102,'Tomada de Decis�o','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1103,102,'Estruturas de Repeti��o','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1104,102,'Vetores e Matrizes','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1105,102,'An�lise Algor�tima','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1106,102,'Ordena��o de Vetores','erro.jsp','erro.jsp',0);
+INSERT INTO T_EFBIT_CAPITULO (cd_capitulo, cd_disciplina, nm_capitulo, ds_pdf, ds_video, st_capitulo) VALUES (1107,102,'Busca','erro.jsp','erro.jsp',0);
+
+--MATRICULA
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100001',10001,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100002',10002,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100003',10003,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100004',10004,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100005',10005,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100006',10006,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100007',10007,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100008',10008,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100009',10009,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100010',10010,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100011',10011,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100012',10012,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100013',10013,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100014',10014,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100015',10015,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100016',10016,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100017',10017,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100018',10018,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100019',10019,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100020',10020,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100021',10021,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100022',10022,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100023',10023,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100024',10024,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100025',10025,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100026',10026,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100027',10027,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100028',10028,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100029',10029,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100030',10030,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100031',10031,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100032',10032,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100033',10033,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100034',10034,100,'23/10/2019');
+INSERT INTO T_EFBIT_MATRICULA (cd_matricula, cd_usuario, cd_disciplina, dt_matricula) VALUES ('100035',10035,100,'23/10/2019');
+
+--EXECU��O
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000001','100001',1112,10001,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000002','100002',1112,10002,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000003','100003',1112,10003,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000004','100004',1112,10004,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000005','100005',1112,10005,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000006','100006',1112,10006,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000007','100007',1112,10007,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000008','100008',1112,10008,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000009','100009',1112,10009,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000010','100010',1112,10010,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000011','100011',1112,10011,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000012','100012',1112,10012,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000013','100013',1112,10013,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000014','100014',1112,10014,100,10,5);
+INSERT INTO T_EFBIT_EXECUCAO (cd_execucao, cd_matricula, cd_capitulo, cd_usuario, cd_disciplina, nr_acessos, nr_avaliacao) VALUES ('000015','100015',1112,10015,100,10,5);
+
+
+
