@@ -1,0 +1,17 @@
+React Native Navigation
+    npm install @react-navigation/native
+    npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+    npm install @react-navigation/stack
+Axios
+    npm install axios
+React Native Elements
+    npm install react-native-elements
+    npm i --save react-native-vector-icons
+AsyncStorage
+    npm install @react-native-community/async-storage
+Font Awesome
+    npm i --save react-native-svg # **
+    npm i --save @fortawesome/fontawesome-svg-core
+    npm i --save @fortawesome/free-solid-svg-icons
+    npm i --save @fortawesome/react-native-fontawesome
+    npm i --save @fortawesome/free-regular-svg-icons
